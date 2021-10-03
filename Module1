@@ -1,0 +1,27 @@
+# importing the required libraries
+import pandas as pd
+# Visualisation libraries
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+import plotly.express as px
+import plotly.graph_objects as go
+import folium
+from folium import plugins
+# Manipulating the default plot size
+plt.rcParams['figure.figsize'] = 10, 12
+# Disable warnings
+import warnings
+warnings.filterwarnings('ignore')
+#1.1 Reading the Datasets
+# Reading the datasets
+df= pd.read_excel('/content/Covid cases in India.xlsx')
+df_india = df.copy()
+df
+# Coordinates of India States and Union Territories
+India_coord = pd.read_excel('/content/Indian Coordinates.xlsx')
+#Day by day data of India, Korea, Italy and Wuhan
+dbd_India = pd.read_excel('/content/per_day_cases.xlsx',parse_dates=True, sheet_name='India')
+dbd_Italy = pd.read_excel('/content/per_day_cases.xlsx',parse_dates=True, sheet_name="Italy")
+dbd_Korea = pd.read_excel('/content/per_day_cases.xlsx',parse_dates=True, sheet_name="Korea")
+dbd_Wuhan = pd.read_excel('/content/per_day_cases.xlsx',parse_dates=True, sheet_name="Wuhan")
